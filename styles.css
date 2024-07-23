@@ -1,4 +1,7 @@
-/* Basic Reset */
+
+/* background-color: #2F3540 */
+/*text color: #9C9CA6 */
+
 * {
     margin: 0;
     padding: 0;
@@ -8,25 +11,31 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+    color: #9C9CA6;
+    background-color: #171C26;
     padding: 20px;
+    height: 100%; /* This makes sure the page has a minimum height of the viewport */
+    margin: 0;
 }
 
 header {
-    background-color: #fff;
+    background-color: #171C26;
     padding: 20px 0;
     border-bottom: 1px solid #ccc;
 }
 
 .logo {
-    width: 100px;
     display: block;
     margin: 0 auto;
+
+    width: 100px; /* Set the width of the image */
+    height: 100px; /* Set the height of the image */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover;
 }
 
 h1, h2 {
-    color: #6a5acd;
+    color: #7289A6;
     text-align: center;
 }
 
@@ -46,18 +55,18 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #9C9CA6;
     font-weight: bold;
 }
 
 nav ul li a:hover {
-    color: #6a5acd;
+    color: #FFFFFF;
 }
 
 main {
     margin-top: 20px;
     padding: 20px;
-    background: white;
+    background: #2F3540;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
@@ -68,23 +77,45 @@ section {
 
 .bible-verse {
     font-style: italic;
-    background-color: #eee;
+    background-color: #252525;
     padding: 15px;
+    margin: 0 auto;  /* Center the div and maintain equal margins on both sides */
+    max-width: 600px;  /* Adjusts the maximum width to 90% of the parent container */
+    min-width: 250px;
+}
+.service{
+    padding: 15px;
+    margin: 0 auto;  /* Center the div and maintain equal margins on both sides */
+    max-width: 250px;  /* Adjusts the maximum width to 90% of the parent container */
+    min-width: 250px;
+    text-align: center;
+}
+.about{
+    padding: 15px;
+    margin: 0 auto;  /* Center the div and maintain equal margins on both sides */
+    max-width: 850px;  /* Adjusts the maximum width to 90% of the parent container */
+    min-width: 350px;
+    text-align: left;
 }
 
-.service, .calendar, .about, .pastor-about, .address, .phone {
+.calendar{
     padding: 15px;
-    background-color: #fff;
+    background-color: #2F3540;
 }
 
 .pastor-about {
     padding: 20px;
-    background-color: #fff;
+    background-color: #2F3540;
+    margin: 0 auto;  /* Center the div and maintain equal margins on both sides */
+    max-width: 850px;  /* Adjusts the maximum width to 90% of the parent container */
+    min-width: 400px;
+    text-align: left;
 }
 
 .pastor-container {
     display: flex;
     align-items: center; /* Aligns the image and text vertically */
+    flex-direction: row; /* Default layout is horizontal */
 }
 
 .pastor-img {
@@ -98,6 +129,7 @@ section {
 .pastor-container p {
     flex: 1; /* Allows the paragraph to fill the remaining space */
     text-align: justify;
+    min-width: 200px; /* Ensures the text has a minimum width */
 }
 
 .body-img {
@@ -107,16 +139,16 @@ section {
     margin-bottom: 20px;
     object-fit: cover; /* Ensures the image covers the allotted space without distortion */
     object-position: center; /* Aligns the image nicely in the center */
-    max-height: 500px; /* You can adjust this value based on your preference */
+    max-height: 200px; /* You can adjust this value based on your preference */
 }
 
 footer {
     text-align: center;
     padding: 20px 0;
-    background-color: #eee;
-    position: relative;
-    bottom: 0;
+    background-color: #171C26;
+    position: relative; /* Footer is part of the document flow */
     width: 100%;
+    height: 50px; /* Fixed height for calculation purposes */
 }
 
 .responsive-iframe {
@@ -139,9 +171,84 @@ footer {
     width: 100%; /* Full width of the parent container */
 }
 
+.map-iframe {
+    overflow: hidden; /* Ensures no scrollbar appears */
+    position: relative; /* Establishes a positioning context for absolute positioning inside */
+    width: 100%; /* Makes the iframe responsive to the container width */
+    max-width: 700px; /* Limits the maximum width */
+    min-width: 300px; /* Ensures a minimum width */
+    height: 0; /* Initially set height to 0 */
+    padding-top: 56.25%; /* Aspect ratio of 16:9 (100%/16*9) */
+    min-height: 300px;
+}
+
+.map-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the parent container */
+    height: 100%; /* Full height of the parent container */
+}
+
+.contact {
+    display: flex;  /* Enables flexbox layout */
+    flex-wrap: wrap; /* Allows items to wrap as needed */
+    justify-content: space-between; /* Distributes space between and around content items */
+    background-color: #2F3540; /* Sets a white background for clarity */
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 5px; /* Rounded corners for a modern look */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 1200px;  /* Adjusts the maximum width to 90% of the parent container */
+    min-width: 250px;
+}
+
+.contact-info, .contact-visuals {
+    flex: 1 1 300px; /* Flex grow, flex shrink, and base width */
+    min-width: 300px; /* Minimum width to ensure content doesn't get too squished */
+    max-width: 50%; /* Maximum width to evenly split the layout on larger screens */
+    padding: 10px; /* Padding around content for spacing */
+}
+
+@media (max-width: 768px) {
+    .contact {
+        flex-direction: column; /* Stacks the flex items vertically on smaller screens */
+    }
+
+    .contact-info, .contact-visuals {
+        max-width: 100%; /* Allows each section to fill the entire container width */
+    }
+}
+
+@media (min-width: 768px) {
+    .map-iframe {
+        padding-top: 30%; /* Smaller percentage for larger screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .map-iframe {
+        padding-top: 20%; /* Even smaller percentage as the screen gets larger */
+    }
+}
+
 @media (max-width: 768px) {
     nav ul li {
         display: block;
         margin-bottom: 10px;
+    }
+
+    .pastor-container {
+        flex-direction: column; /* Stacks the items vertically */
+        align-items: center; /* Center-aligns the items */
+    }
+
+    .pastor-img {
+        margin-right: 0; /* Removes margin since the image will be on top */
+        margin-bottom: 20px; /* Adds space between the image and the text */
+    }
+
+    .pastor-container p {
+        text-align: center; /* Center-aligns the text for better readability */
     }
 }
