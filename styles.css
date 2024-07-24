@@ -61,6 +61,13 @@ nav ul li a:hover {
     color: #FFFFFF;
 }
 
+.email{
+    color: #d1caca;
+}
+.email:hover{
+    color: #FFFFFF;
+}
+
 main {
     margin-top: 20px;
     padding: 20px;
@@ -87,6 +94,18 @@ section {
     max-width: 250px;  /* Adjusts the maximum width to 90% of the parent container */
     min-width: 250px;
     text-align: center;
+}
+.image-container {
+    display: flex;  /* Use flexbox to align children side by side */
+    justify-content: center;  /* Center the images in the container */
+    align-items: center;  /* Align images vertically */
+    gap: 50px;  /* Optional: Adds space between the images */
+    padding: 25px;
+}
+
+.image-container img {
+    width: 25%;  /* Each image takes up 50% of the container width */
+    height: 25%;  /* Maintain aspect ratio */
 }
 .about{
     padding: 15px;
@@ -137,7 +156,7 @@ section {
     margin-bottom: 20px;
     object-fit: cover; /* Ensures the image covers the allotted space without distortion */
     object-position: center; /* Aligns the image nicely in the center */
-    max-height: 200px; /* You can adjust this value based on your preference */
+    max-height: 500px; /* You can adjust this value based on your preference */
 }
 
 footer {
