@@ -46,7 +46,42 @@ header {
     height: auto; /* Set the height of the image */
     object-fit: cover;
 }
+.calendar {
+    padding: 15px;
+    background-color: #2F3540;
+}
+
+.responsive-iframe {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 75%; /* Default aspect ratio */
+    max-width: 1200px; /* Maximum width limit */
+    margin: 0 auto; /* Center the iframe container */
+}
+
+.responsive-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #777;
+}
+
+@media (min-width: 1024px) {
+    .responsive-iframe {
+        padding-top: 50%; /* Adjust aspect ratio for large screens */
+    }
+}
+
 @media (max-width: 768px) {
+    .responsive-iframe {
+        padding-top: 150%; /* Increase height relative to width for smaller devices */
+    }
+    .calendar {
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
     .logo {
         width: 35%; /* Increase the width percentage on smaller screens */
     }
@@ -60,6 +95,12 @@ header {
 }
 
 @media (max-width: 480px) {
+    .responsive-iframe {
+        padding-top: 200%; /* Further increase for very small devices */
+    }
+    .calendar {
+        padding: 5px; /* Minimal padding for very small screens */
+    }
     .logo {
         width: 50%; /* Further increase for very small devices */
     }
@@ -68,7 +109,7 @@ header {
         height: 60%;
     }
     .image-container {
-        gap: 20px;
+        gap: 10px;
     }
 }
 
@@ -159,10 +200,6 @@ section {
     text-align: left;
 }
 
-.calendar{
-    padding: 15px;
-    background-color: #2F3540;
-}
 
 .pastor-about {
     padding: 20px;
@@ -213,25 +250,7 @@ footer {
     height: 50px; /* Fixed height for calculation purposes */
 }
 
-.responsive-iframe {
-    overflow: hidden; /* Ensures no scrollbar appears */
-    padding-top: 56.25%; /* Percentage ratio for 16:9 aspect ratio */
-    position: relative; /* Establishes a positioning context for absolute positioning inside */
-    width: 100%; /* Ensures the container takes up all the horizontal space of its parent element */
-    height: 0; /* Collapses the container vertically; padding-top gives it height */
-    max-width: 1200px;
-    max-height: 400px;
-    margin: auto;
-}
 
-.responsive-iframe iframe {
-    border: 0; /* Removes any default border around iframes */
-    height: 100%; /* Full height of the parent container */
-    left: 0; /* Aligns the iframe to the left of the parent container */
-    position: absolute; /* Positions the iframe absolutely inside the relative parent */
-    top: 0; /* Aligns the iframe to the top of the parent container */
-    width: 100%; /* Full width of the parent container */
-}
 
 .map-iframe {
     overflow: hidden; /* Ensures no scrollbar appears */
