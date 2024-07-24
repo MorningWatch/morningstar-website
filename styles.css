@@ -27,7 +27,18 @@ header {
     border-bottom: 1px solid #ccc;
     width: 100%;
 }
+.image-container {
+    display: flex;  /* Use flexbox to align children side by side */
+    justify-content: center;  /* Center the images in the container */
+    align-items: center;  /* Align images vertically */
+    gap: 50px;  /* Optional: Adds space between the images */
+    padding: 25px;
+}
 
+.image-container img {
+    width: 25%;  /* Each image takes up 50% of the container width */
+    height: 25%;  /* Maintain aspect ratio */
+}
 .logo {
     display: block;
     margin: 0 auto;
@@ -39,11 +50,19 @@ header {
     .logo {
         width: 35%; /* Increase the width percentage on smaller screens */
     }
+    .image-container img{
+        width: 50%;
+        height: 50%;
+    }
 }
 
 @media (max-width: 480px) {
     .logo {
         width: 50%; /* Further increase for very small devices */
+    }
+    .image-container img{
+        width: 60%;
+        height: 60%;
     }
 }
 
@@ -125,18 +144,7 @@ section {
     min-width: 250px;
     text-align: center;
 }
-.image-container {
-    display: flex;  /* Use flexbox to align children side by side */
-    justify-content: center;  /* Center the images in the container */
-    align-items: center;  /* Align images vertically */
-    gap: 50px;  /* Optional: Adds space between the images */
-    padding: 25px;
-}
 
-.image-container img {
-    width: 25%;  /* Each image takes up 50% of the container width */
-    height: 25%;  /* Maintain aspect ratio */
-}
 .about{
     padding: 15px;
     margin: 0 auto;  /* Center the div and maintain equal margins on both sides */
