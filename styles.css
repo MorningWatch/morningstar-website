@@ -16,12 +16,16 @@ body {
     background-color: #2F3540;
     height: 100%; /* This makes sure the page has a minimum height of the viewport */
     margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+
 }
 
 header {
     background-color: #171C26;
     padding: 20px 0;
     border-bottom: 1px solid #ccc;
+    width: 100%;
 }
 
 .logo {
@@ -31,30 +35,56 @@ header {
     height: auto; /* Set the height of the image */
     object-fit: cover;
 }
+@media (max-width: 768px) {
+    .logo {
+        width: 35%; /* Increase the width percentage on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 50%; /* Further increase for very small devices */
+    }
+}
 
 h1, h2 {
     color: #7289A6;
     text-align: center;
 }
 
-nav {
-    text-align: center;
-    margin-top: 0;
-}
-
 nav ul {
+    display: flex;
+    justify-content: center;
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-    display: inline;
     margin-right: 20px;
+    padding: 10px 15px; /* Padding makes the clickable area larger */
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* Removes the margin on the last item */
 }
 
 nav ul li a {
     text-decoration: none;
     color: #9C9CA6;
     font-weight: bold;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    nav ul li {
+        padding: 10px 5px; /* Reduce padding to save space */
+        margin-right: 10px; /* Reduce margin between items */
+    }
+
+    nav ul li a {
+        font-size: 14px; /* Smaller font size to fit more items */
+    }
 }
 
 nav ul li a:hover {
