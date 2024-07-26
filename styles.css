@@ -69,6 +69,41 @@ header {
     border: 1px solid #777;
 }
 
+.about{
+    padding: 15px;
+    margin: 0 auto;  /* Center the div and maintain equal margins on both sides */
+    max-width: 850px;  /* Adjusts the maximum width to 90% of the parent container */
+    text-align: left;
+}
+
+
+.pastor-about {
+    padding: 20px;
+    background-color: #2F3540;
+    margin: 0 auto;  /* Center the div and maintain equal margins on both sides */
+    max-width: 850px;  /* Adjusts the maximum width to 90% of the parent container */
+    text-align: left;
+}
+
+.pastor-container {
+    display: flex;
+    align-items: center; /* Aligns the image and text vertically */
+    flex-direction: row; /* Default layout is horizontal */
+}
+
+.pastor-img {
+    width: 300px; /* Set the width of the image */
+    height: 300px; /* Set the height of the image */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    margin-right: 20px; /* Adds some space between the image and the paragraph */
+}
+
+.pastor-container p {
+    flex: 1; /* Allows the paragraph to fill the remaining space */
+    text-align: justify;
+}
+
 @media (min-width: 1024px) {
     .responsive-iframe {
         padding-top: 50%; /* Adjust aspect ratio for large screens */
@@ -92,6 +127,22 @@ header {
     .image-container {
         gap: 30px;
     }
+    .about, .pastor-about {
+        padding: 10px;
+        max-width: 100%; /* Allow the container to fit the screen size */
+    }
+    .pastor-img {
+        width: 200px;
+        height: 200px;
+    }
+    .pastor-container {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+    }
+    .pastor-container p {
+        margin-top: 10px; /* Add some space between the image and text */
+        min-width: 0; /* Remove minimum width constraint */
+    }
 }
 
 @media (max-width: 480px) {
@@ -110,6 +161,13 @@ header {
     }
     .image-container {
         gap: 10px;
+    }
+    .about, .pastor-about {
+        padding: 5px;
+    }
+    .pastor-img {
+        width: 150px;
+        height: 150px;
     }
 }
 
@@ -192,43 +250,6 @@ section {
     text-align: center;
 }
 
-.about{
-    padding: 15px;
-    margin: 0 auto;  /* Center the div and maintain equal margins on both sides */
-    max-width: 850px;  /* Adjusts the maximum width to 90% of the parent container */
-    min-width: 350px;
-    text-align: left;
-}
-
-
-.pastor-about {
-    padding: 20px;
-    background-color: #2F3540;
-    margin: 0 auto;  /* Center the div and maintain equal margins on both sides */
-    max-width: 850px;  /* Adjusts the maximum width to 90% of the parent container */
-    min-width: 400px;
-    text-align: left;
-}
-
-.pastor-container {
-    display: flex;
-    align-items: center; /* Aligns the image and text vertically */
-    flex-direction: row; /* Default layout is horizontal */
-}
-
-.pastor-img {
-    width: 300px; /* Set the width of the image */
-    height: 300px; /* Set the height of the image */
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
-    margin-right: 20px; /* Adds some space between the image and the paragraph */
-}
-
-.pastor-container p {
-    flex: 1; /* Allows the paragraph to fill the remaining space */
-    text-align: justify;
-    min-width: 200px; /* Ensures the text has a minimum width */
-}
 
 .body-img {
     width: 100%;  /* Ensures the image spans the full width of its container */
