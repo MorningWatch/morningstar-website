@@ -69,13 +69,13 @@ header {
     border: 1px solid #777;
 }
 
+
 .about{
     padding: 15px;
     margin: 0 auto;  /* Center the div and maintain equal margins on both sides */
     max-width: 850px;  /* Adjusts the maximum width to 90% of the parent container */
     text-align: left;
 }
-
 
 .pastor-about {
     padding: 20px;
@@ -127,21 +127,23 @@ header {
     .image-container {
         gap: 30px;
     }
+
+
     .about, .pastor-about {
         padding: 10px;
-        max-width: 100%; /* Allow the container to fit the screen size */
+        max-width: 100%;
     }
     .pastor-img {
-        width: 200px;
+        width: 200px; /* Or use a percentage if preferred */
         height: 200px;
     }
     .pastor-container {
-        flex-direction: column; /* Stack elements vertically */
+        flex-direction: column;
         align-items: center;
     }
     .pastor-container p {
-        margin-top: 10px; /* Add some space between the image and text */
-        min-width: 0; /* Remove minimum width constraint */
+        margin-top: 10px;
+        min-width: 0; /* Crucial for preventing overflow */
     }
 }
 
@@ -162,6 +164,7 @@ header {
     .image-container {
         gap: 10px;
     }
+
     .about, .pastor-about {
         padding: 5px;
     }
