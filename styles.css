@@ -92,11 +92,13 @@ header {
 }
 
 .pastor-img {
-    width: 300px; /* Set the width of the image */
-    height: 300px; /* Set the height of the image */
+    width: 350px; /* Set the width of the image */
+    height: 350px; /* Set the height of the image */
     border-radius: 50%; /* Makes the image circular */
     object-fit: cover; /* Ensures the image covers the area without distortion */
-    margin-right: 20px; /* Adds some space between the image and the paragraph */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .pastor-container p {
@@ -104,9 +106,22 @@ header {
     text-align: justify;
 }
 
+.pastor-text {
+    padding: 20px;
+}
+.pastor-text ol {
+    padding-left: 20px;  /* Adjust the value as needed */
+}
+.pastor-text ul {
+    padding-left: 20px;  /* Adjust the value as needed */
+}
+
 @media (min-width: 1024px) {
     .responsive-iframe {
         padding-top: 50%; /* Adjust aspect ratio for large screens */
+    }
+    .pastor-text {
+        padding: 20px;
     }
 }
 
@@ -127,6 +142,9 @@ header {
     .image-container {
         gap: 30px;
     }
+    .pastor-text {
+        padding: 20;
+    }
 
 
     .about, .pastor-about {
@@ -136,6 +154,8 @@ header {
     .pastor-img {
         width: 200px; /* Or use a percentage if preferred */
         height: 200px;
+        margin-left: calc(50% - 100px);
+        margin-right: calc(50% - 100px);
     }
     .pastor-container {
         flex-direction: column;
@@ -164,6 +184,9 @@ header {
     .image-container {
         gap: 10px;
     }
+    .pastor-text {
+        padding: 5px;
+    }
 
     .about, .pastor-about {
         padding: 5px;
@@ -171,6 +194,8 @@ header {
     .pastor-img {
         width: 200px;
         height: 200px;
+        margin-left: calc(50% - 100px);
+        margin-right: calc(50% - 100px);
     }
 }
 
