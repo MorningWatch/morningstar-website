@@ -1,7 +1,3 @@
-
-/* background-color: #2F3540 */
-/*text color: #9C9CA6 */
-
 * {
     margin: 0;
     padding: 0;
@@ -12,9 +8,8 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #d1caca;
-    /*background-color: #171C26; */
     background-color: #2F3540;
-    height: 100%; /* This makes sure the page has a minimum height of the viewport */
+    height: 100%;
     margin: 0;
     width: 100%;
     overflow-x: hidden;
@@ -27,23 +22,23 @@ header {
     border-bottom: 1px solid #ccc;
     width: 100%;
 }
-.image-container {
-    display: flex;  /* Use flexbox to align children side by side */
-    justify-content: center;  /* Center the images in the container */
-    align-items: center;  /* Align images vertically */
-    gap: 50px;  /* Optional: Adds space between the images */
+.image-container, .image-container-index {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
     padding: 25px;
 }
 
-.image-container img {
-    width: 25%;  /* Each image takes up 50% of the container width */
-    height: 25%;  /* Maintain aspect ratio */
+.image-container img, .image-container-index img{
+    width: 25%;
+    height: 25%;
 }
 .logo {
     display: block;
     margin: 0 auto;
-    width: 15%; /* Set the width of the image */
-    height: auto; /* Set the height of the image */
+    width: 15%;
+    height: auto;
     object-fit: cover;
 }
 .calendar {
@@ -55,9 +50,9 @@ header {
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding-top: 75%; /* Default aspect ratio */
-    max-width: 1200px; /* Maximum width limit */
-    margin: 0 auto; /* Center the iframe container */
+    padding-top: 75%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .responsive-iframe iframe {
@@ -72,37 +67,37 @@ header {
 
 .about{
     padding: 15px;
-    margin: 0 auto;  /* Center the div and maintain equal margins on both sides */
-    max-width: 850px;  /* Adjusts the maximum width to 90% of the parent container */
+    margin: 0 auto;
+    max-width: 850px;
     text-align: left;
 }
 
 .pastor-about {
     padding: 20px;
     background-color: #2F3540;
-    margin: 0 auto;  /* Center the div and maintain equal margins on both sides */
-    max-width: 850px;  /* Adjusts the maximum width to 90% of the parent container */
+    margin: 0 auto;
+    max-width: 850px;
     text-align: left;
 }
 
 .pastor-container {
     display: flex;
-    align-items: center; /* Aligns the image and text vertically */
-    flex-direction: row; /* Default layout is horizontal */
+    align-items: left;
+    flex-direction: row;
 }
 
 .pastor-img {
-    width: 350px; /* Set the width of the image */
-    height: 350px; /* Set the height of the image */
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
 .pastor-container p {
-    flex: 1; /* Allows the paragraph to fill the remaining space */
+    flex: 1;
     text-align: justify;
 }
 
@@ -110,15 +105,15 @@ header {
     padding: 20px;
 }
 .pastor-text ol {
-    padding-left: 20px;  /* Adjust the value as needed */
+    padding-left: 20px;
 }
 .pastor-text ul {
-    padding-left: 20px;  /* Adjust the value as needed */
+    padding-left: 20px;
 }
 
 @media (min-width: 1024px) {
     .responsive-iframe {
-        padding-top: 50%; /* Adjust aspect ratio for large screens */
+        padding-top: 50%;
     }
     .pastor-text {
         padding: 20px;
@@ -127,65 +122,77 @@ header {
 
 @media (max-width: 768px) {
     .responsive-iframe {
-        padding-top: 150%; /* Increase height relative to width for smaller devices */
+        padding-top: 150%;
     }
     .calendar {
-        padding: 10px; /* Reduce padding on smaller screens */
+        padding: 10px;
     }
     .logo {
-        width: 35%; /* Increase the width percentage on smaller screens */
+        width: 35%;
     }
-    .image-container img{
+    .image-container img, .image-container-index img{
         width: 50%;
         height: 50%;
     }
     .image-container {
-        gap: 30px;
+        flex-direction: column;
+        align-items: flex-start;
     }
     .pastor-text {
-        padding: 20;
+        padding: 20px;
+        text-align: left;
+        width: 100%;
     }
-
+    .about p {
+        text-align: left;
+        flex: none;
+    }
 
     .about, .pastor-about {
         padding: 10px;
         max-width: 100%;
     }
     .pastor-img {
-        width: 200px; /* Or use a percentage if preferred */
+        width: 200px;
         height: 200px;
         margin-left: calc(50% - 100px);
         margin-right: calc(50% - 100px);
     }
     .pastor-container {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
     .pastor-container p {
         margin-top: 10px;
-        min-width: 0; /* Crucial for preventing overflow */
+        min-width: 0;
+        flex: none;
+        text-align: left;
+        width: 100%;
     }
 }
 
 @media (max-width: 480px) {
     .responsive-iframe {
-        padding-top: 200%; /* Further increase for very small devices */
+        padding-top: 200%;
     }
     .calendar {
-        padding: 5px; /* Minimal padding for very small screens */
+        padding: 5px;
     }
     .logo {
-        width: 50%; /* Further increase for very small devices */
+        width: 50%;
     }
-    .image-container img{
+    .image-container img, .image-container-index img{
         width: 60%;
         height: 60%;
     }
     .image-container {
-        gap: 10px;
+        flex-direction: column;
+        align-items: flex-start;
     }
     .pastor-text {
         padding: 5px;
+        text-align: left;
+        width: 100%;
     }
 
     .about, .pastor-about {
@@ -196,6 +203,14 @@ header {
         height: 200px;
         margin-left: calc(50% - 100px);
         margin-right: calc(50% - 100px);
+    }
+    .pastor-container p {
+        text-align: left;
+        flex: none;
+    }
+    .about p {
+        text-align: left;
+        flex: none;
     }
 }
 
@@ -215,11 +230,11 @@ nav ul {
 
 nav ul li {
     margin-right: 20px;
-    padding: 10px 15px; /* Padding makes the clickable area larger */
+    padding: 10px 15px;
 }
 
 nav ul li:last-child {
-    margin-right: 0; /* Removes the margin on the last item */
+    margin-right: 0;
 }
 
 nav ul li a {
@@ -228,15 +243,14 @@ nav ul li a {
     font-weight: bold;
 }
 
-/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     nav ul li {
-        padding: 10px 5px; /* Reduce padding to save space */
-        margin-right: 10px; /* Reduce margin between items */
+        padding: 10px 5px;
+        margin-right: 10px;
     }
 
     nav ul li a {
-        font-size: 14px; /* Smaller font size to fit more items */
+        font-size: 14px;
     }
 }
 
@@ -267,49 +281,48 @@ section {
     font-style: italic;
     background-color: #252525;
     padding: 15px;
-    margin: 0 auto;  /* Center the div and maintain equal margins on both sides */
-    max-width: 600px;  /* Adjusts the maximum width to 90% of the parent container */
+    margin: 0 auto;
+    max-width: 600px;
     min-width: 250px;
 }
 .service{
     padding: 15px;
-    margin: 0 auto;  /* Center the div and maintain equal margins on both sides */
-    max-width: 250px;  /* Adjusts the maximum width to 90% of the parent container */
+    margin: 0 auto;
+    max-width: 250px;
     min-width: 250px;
     text-align: center;
 }
 
 
 .body-img {
-    width: 100%;  /* Ensures the image spans the full width of its container */
-    height: auto; /* Maintains the image's aspect ratio */
+    width: 100%;
+    height: auto;
     display: block;
     margin-bottom: 20px;
-    object-fit: cover; /* Ensures the image covers the allotted space without distortion */
-    object-position: center; /* Aligns the image nicely in the center */
-    max-height: 500px; /* You can adjust this value based on your preference */
+    object-fit: cover;
+    object-position: center;
+    max-height: 500px;
 }
 
 footer {
     text-align: center;
     padding: 20px 0;
-    /*background-color: #171C26;*/
     background-color: #2F3540;
-    position: relative; /* Footer is part of the document flow */
+    position: relative;
     width: 100%;
-    height: 50px; /* Fixed height for calculation purposes */
+    height: 50px;
 }
 
 
 
 .map-iframe {
-    overflow: hidden; /* Ensures no scrollbar appears */
-    position: relative; /* Establishes a positioning context for absolute positioning inside */
-    width: 100%; /* Makes the iframe responsive to the container width */
-    max-width: 700px; /* Limits the maximum width */
-    min-width: 300px; /* Ensures a minimum width */
-    height: 0; /* Initially set height to 0 */
-    padding-top: 56.25%; /* Aspect ratio of 16:9 (100%/16*9) */
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    min-width: 300px;
+    height: 0;
+    padding-top: 56.25%;
     min-height: 300px;
 }
 
@@ -317,49 +330,49 @@ footer {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* Full width of the parent container */
-    height: 100%; /* Full height of the parent container */
+    width: 100%;
+    height: 100%;
 }
 
 .contact {
-    display: flex;  /* Enables flexbox layout */
-    flex-wrap: wrap; /* Allows items to wrap as needed */
-    justify-content: space-between; /* Distributes space between and around content items */
-    background-color: #2F3540; /* Sets a white background for clarity */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #2F3540;
     padding: 20px;
     margin: 0 auto;
-    border-radius: 5px; /* Rounded corners for a modern look */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    max-width: 1200px;  /* Adjusts the maximum width to 90% of the parent container */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
     min-width: 250px;
 }
 
 .contact-info, .contact-visuals {
-    flex: 1 1 300px; /* Flex grow, flex shrink, and base width */
-    min-width: 300px; /* Minimum width to ensure content doesn't get too squished */
-    max-width: 50%; /* Maximum width to evenly split the layout on larger screens */
-    padding: 10px; /* Padding around content for spacing */
+    flex: 1 1 300px;
+    min-width: 300px;
+    max-width: 50%;
+    padding: 10px;
 }
 
 @media (max-width: 768px) {
     .contact {
-        flex-direction: column; /* Stacks the flex items vertically on smaller screens */
+        flex-direction: column;
     }
 
     .contact-info, .contact-visuals {
-        max-width: 100%; /* Allows each section to fill the entire container width */
+        max-width: 100%;
     }
 }
 
 @media (min-width: 768px) {
     .map-iframe {
-        padding-top: 30%; /* Smaller percentage for larger screens */
+        padding-top: 30%;
     }
 }
 
 @media (min-width: 1024px) {
     .map-iframe {
-        padding-top: 20%; /* Even smaller percentage as the screen gets larger */
+        padding-top: 20%;
     }
 }
 
@@ -367,19 +380,5 @@ footer {
     nav ul li {
         display: block;
         margin-bottom: 10px;
-    }
-
-    .pastor-container {
-        flex-direction: column; /* Stacks the items vertically */
-        align-items: center; /* Center-aligns the items */
-    }
-
-    .pastor-img {
-        margin-right: 0; /* Removes margin since the image will be on top */
-        margin-bottom: 20px; /* Adds space between the image and the text */
-    }
-
-    .pastor-container p {
-        text-align: center; /* Center-aligns the text for better readability */
     }
 }
